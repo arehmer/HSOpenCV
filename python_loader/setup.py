@@ -43,7 +43,7 @@ def main():
         package_data={
             "cv2": typing_stub_files
         },
-        maintainer="OpenCV Team",
+        maintainer="Heimann Sensor GmbH",
         install_requires="numpy",
         classifiers=[
             "Development Status :: 5 - Production/Stable",
