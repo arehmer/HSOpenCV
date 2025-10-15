@@ -13,6 +13,24 @@ def collect_module_typing_stub_files(root_module_path):
                 filter(lambda f: f.endswith(".pyi"), files))
         )
     return stub_files
+    
+def collect_dll_files(root_module_path):
+    dll_files = []
+    for module_path, _, files in os.walk(root_module_path):
+        dll_files.extend(
+            map(lambda p: os.path.join(module_path, p),
+                filter(lambda f: f.endswith(".dll"), files))
+        )
+    return dll_files
+    
+def collect_pyd_files(root_module_path):
+    pyd_files = []
+    for module_path, _, files in os.walk(root_module_path):
+        pyd_files.extend(
+            map(lambda p: os.path.join(module_path, p),
+                filter(lambda f: f.endswith(".pyd"), files))
+        )
+    return pyd_files
 
 
 def main():
@@ -30,7 +48,12 @@ def main():
         typing_stub_files = collect_module_typing_stub_files(root_module_path)
         if len(typing_stub_files) > 0:
             typing_stub_files.append(py_typed_path)
-
+    
+    dll_files = collect_dll_files(root_module_path)
+    pyd_files = collect_pyd_files(root_module_path)
+    
+    package_data = typing_stub_files + dll_files + pyd_files
+    
     setuptools.setup(
         name=package_name,
         version=package_version,
@@ -41,8 +64,9 @@ def main():
         long_description_content_type="text/markdown",
         packages=setuptools.find_packages(),
         package_data={
-            "cv2": typing_stub_files
+            "cv2": package_data
         },
+        include_package_data = True,
         maintainer="OpenCV Team",
         install_requires="numpy",
         classifiers=[

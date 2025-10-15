@@ -1,0 +1,28 @@
+^C:\USERS\REHMER\OPENCV\WIN64_PY_CV2\CMAKEFILES\375EAB941EB96DA3990399AEE9CAD338\PYOPENCV_GENERATED_ENUMS.H.RULE
+setlocal
+C:\Users\Rehmer\AppData\Local\Programs\Python\Python312\envs\cv2\Scripts\python.exe C:/Users/Rehmer/Documents/GitHub/HSOpenCV/source/modules/python/src2/gen2.py --config C:/Users/Rehmer/OpenCV/Win64_py_cv2/modules/python_bindings_generator/gen_python_config.json --output_dir C:/Users/Rehmer/OpenCV/Win64_py_cv2/modules/python_bindings_generator
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\REHMER\OPENCV\WIN64_PY_CV2\CMAKEFILES\37C749923BC92AF48D1C364CAD54BACE\GEN_OPENCV_PYTHON_SOURCE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\REHMER\DOCUMENTS\GITHUB\HSOPENCV\SOURCE\MODULES\PYTHON\BINDINGS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Rehmer/Documents/GitHub/HSOpenCV/source -BC:/Users/Rehmer/OpenCV/Win64_py_cv2 --check-stamp-file C:/Users/Rehmer/OpenCV/Win64_py_cv2/modules/python_bindings_generator/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
