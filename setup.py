@@ -69,7 +69,7 @@ def main():
         },
         include_package_data = True,
         maintainer="OpenCV Team",
-        install_requires="numpy",
+        install_requires="numpy==1.26.4",
         classifiers=[
             "Development Status :: 5 - Production/Stable",
             "Environment :: Console",

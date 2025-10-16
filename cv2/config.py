@@ -3,7 +3,7 @@ from pathlib import Path
 
 # __file__ is the path of the current file
 current_dir = Path(__file__).parent
-dll_dir = current_dir / 'bin' / 'Release'
+dll_dir = current_dir / 'bin' 
 
 BINARIES_PATHS = [
     str(dll_dir)
