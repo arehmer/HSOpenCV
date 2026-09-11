@@ -1,10 +1,5 @@
 import os
-from pathlib import Path
-
-# __file__ is the path of the current file
-current_dir = Path(__file__).parent
-dll_dir = current_dir / 'bin' 
 
 BINARIES_PATHS = [
-    str(dll_dir)
+    'C:/Users/Rehmer/OpenCV/Win64_py_cv2/bin/Release'
 ] + BINARIES_PATHS
